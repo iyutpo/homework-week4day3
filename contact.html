@@ -64,6 +64,24 @@
                 </div>
 
                 <div class="selectmenu">
+                    <label for="">How should we contact you?</label>
+                    <select name="" id="contactSelector">
+                        <option value="Select One">Select One</option>
+                        <option value="Phone">Phone</option>
+                        <option value="Email">Email</option>
+                    </select>
+                </div>
+                <div id="phonetext" style="display: none;">
+                    <p>Please Enter Your Phone</p>
+                    <input>
+                </div>
+                <div id="emailtext" style="display: none;">
+                    <p>Please Enter Your Email</p>
+                    <input>
+                </div>
+                
+
+                <div class="selectmenu">
                     <label>Which Cliff are you inquiring?</label>  
                     <select>
                         <option>West Cliff</option>
@@ -114,6 +132,56 @@
 
             </div>
         </footer>
+        <script>
+            var contactSelector = document.getElementById('contactSelector');
+            contactSelector.addEventListener('change', (e) => {
+                var option = e.target.value;
+                var phonetext = document.getElementById('phonetext');
+                var emailtext = document.getElementById('emailtext');
+                var contacttext = document.getElementById('contacttext');
+                if (option === 'Select One') {
+                    // contacttext.style.display = 'none';
+                    emailtext.style.display = 'none';
+                    phonetext.style.display = 'none';
+                } else if (option === 'Phone') {
+                    // contacttext.style.display = 'block';
+                    emailtext.style.display = 'none';
+                    phonetext.style.display = 'block';
+                } else if (option === 'Email') {
+                    // contacttext.style.display = 'block';
+                    emailtext.style.display = 'block';
+                    phonetext.style.display = 'none';
+                }
+            });
+
+
+
+            // var value = contactSelector.value;
+            // var option = contactSelector.options[contactSelector.selectedIndex].text;
+            // console.log('value: ' + value + ' option: ' + option);
+
+            // contactSelector.addEventListener('change', show);
+            // function show(option) {
+            //     var phonetext = document.getElementById('phonetext');
+            //     var emailtext = document.getElementById('emailtext');
+            //     var contacttext = document.getElementById('contacttext');
+            //     if (option === 'Select One') {
+            //         contacttext.style.display = 'none';
+            //         emailtext.style.display = 'none';
+            //         phonetext.style.display = 'none';
+            //     } else if (option === 'Phone') {
+            //         contacttext.style.display = 'block';
+            //         emailtext.style.display = 'none';
+            //         phonetext.style.display = 'block';
+            //     } else if (option === 'Email') {
+            //         contacttext.style.display = 'block';
+            //         emailtext.style.display = 'block';
+            //         phonetext.style.display = 'none';
+            //     }
+            // }
+            // console.log('value: ' + value + ' option: ' + option);
+            // show(option);
+        </script>
 
         <!-- PARTNERS -->
         <script src="js/site_scripts.js"></script>
